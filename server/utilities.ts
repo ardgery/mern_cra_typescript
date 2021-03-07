@@ -11,7 +11,6 @@ export function processMessage(payload: string) {
 }
 
 export interface CustomWebSocket extends WebSocket {
-    on: string;
-    [key: string]: string;
+    [key: any]: any;
     connectionID: string;
 }
