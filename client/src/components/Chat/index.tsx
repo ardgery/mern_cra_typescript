@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar, Button, ListItem, ListItemAvatar, ListItemText, TextField, Typography } from '@material-ui/core';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 type Message = {
     user: string,
