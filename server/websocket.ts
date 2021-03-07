@@ -7,7 +7,7 @@ import { broadCastMessage, clients, retrieveAndSendMessages, setClients } from '
 const server = http.createServer();
 const wss = new WebSocket.Server({ noServer: true });
 
-wss.on('connection', function connection(ws: CustomWebSocket): any {
+wss.on('connection', function connection(ws: CustomWebSocket) {
     // a single client has joined
 
     clients.push(ws)
