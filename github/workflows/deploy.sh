@@ -10,7 +10,7 @@ mv .gitignore_cicd .gitignore
 git init .
 git add .
 git commit -m "Deploying"
-git remote add production ssh://$user@$AWS_HOST/~/webapp
+git remote add production ssh://$user@$AWS_HOST/~/ardgery/mern_cra_typescript
 git push --force production master
 
 # ssh $user@$AWS_HOST "cd ~/webapp && \
