@@ -17,15 +17,15 @@ jobs:
                   NODE_ENV: production
               run: |
                   cd server
-                  yarn install --frozen-lockfile
+                  npm install --frozen-lockfile
                   tsc
             - name: Build Client
               env:
                   NODE_ENV: production
               run: |
                   cd client
-                  yarn install --frozen-lockfile
-                  yarn build
+                  npm install --frozen-lockfile
+                  npm run build
             - name: Deploy on server
               env:
                   DEPLOYMENT_KEY_B64: ${{ secrets.DEPLOYMENT_KEY_B64 }}
