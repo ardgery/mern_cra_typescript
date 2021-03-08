@@ -14,14 +14,14 @@ jobs:
                   node-version: '14.8.0'
             - name: Build Server
               env:
-                  NODE_ENV: production
+                  NODE_ENV: development
               run: |
                   cd server
                   npm install --frozen-lockfile
                   tsc
             - name: Build Client
               env:
-                  NODE_ENV: production
+                  NODE_ENV: development
               run: |
                   cd client
                   npm install --frozen-lockfile
