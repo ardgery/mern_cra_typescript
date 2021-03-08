@@ -18,6 +18,7 @@ wss.on('connection', function connection(ws: CustomWebSocket): any {
         )
     })
 
+
     ws.on('message', function incoming(payload) {
         const message = processMessage(payload.toString());
         if (!message) {
