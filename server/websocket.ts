@@ -60,8 +60,6 @@ server.on('upgrade', function upgrade(request, socket, head) {
 
 
 
-
-
     wss.handleUpgrade(request, socket, head, function done(ws) {
         const _ws = ws as CustomWebSocket
 
