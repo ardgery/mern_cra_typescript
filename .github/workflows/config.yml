@@ -30,12 +30,5 @@ jobs:
               env:
                   DEPLOYMENT_KEY_B64: ${{ secrets.DEPLOYMENT_KEY_B64 }}
               run: |
-                  mkdir ~/.ssh;
-                  touch ~/.ssh/known_hosts;
-                  ssh-keyscan $AWS_HOST >> ~/.ssh/known_hosts;
-                  echo $DEPLOYMENT_KEY_B64 | base64 -d > ~/.ssh/id_rsa;
-                  chmod 644 ~/.ssh/known_hosts;
-                  chmod 600 ~/.ssh/id_rsa;
                   chmod 0755 ./.github/workflows/deploy.sh;
                   ./.github/workflows/deploy.sh;
-                  rm -rf ~/.ssh;
