@@ -3,7 +3,7 @@ on:
     push:
         branches: [master]
 env:
-    AWS_HOST: 3.16.156.44
+    AWS_HOST: 18.216.172.213
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -35,6 +35,7 @@ jobs:
                   ssh-keyscan $AWS_HOST >> ~/.ssh/known_hosts;
                   echo $DEPLOYMENT_KEY_B64 | base64 -d > ~/.ssh/id_rsa;
                   chmod 644 ~/.ssh/known_hosts;
+                  chmod 700 ~/.ssh/id_rsa;
                   chmod 0755 ./.github/workflows/deploy.sh;
                   ./.github/workflows/deploy.sh;
                   rm -rf ~/.ssh;
